@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
 import { CustomerProvider } from '../../../providers/customer/customer';
 
@@ -15,15 +15,20 @@ export class ModalCreateCustomerPage {
     public navCtrl: NavController,
     public viewCtrl : ViewController,
     public customerProvider: CustomerProvider,
-    public alertCtrl: AlertController) { }
+    public alertCtrl: AlertController,
+    public loadingCtrl: LoadingController) { }
 
   public closeModal(){
     this.viewCtrl.dismiss();
   }
 
   public createCustomer() {
+    let loaderCreate = this.loadingCtrl.create();
+    loaderCreate.present();
+
     this.customerProvider.createCustomer(this.formData)
       .then((response) => {
+        loaderCreate.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Success!',
           subTitle: 'Customer created!',

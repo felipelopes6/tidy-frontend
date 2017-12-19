@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { CustomerProvider } from '../../../providers/customer/customer';
@@ -19,7 +19,8 @@ export class CustomerDetailsPage {
     public navParams: NavParams,
     private customerProvider: CustomerProvider,
     public alertCtrl: AlertController,
-    public modalCtrl: ModalController) {       
+    public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController) {       
       this.customerDetail = this.navParams.data.customer_data;
     }
 
@@ -37,8 +38,12 @@ export class CustomerDetailsPage {
         {
           text: 'Confirm',
           handler: () => {
+            let loaderDelete = this.loadingCtrl.create();
+            loaderDelete.present();
+            
             this.customerProvider.deleteCustomer(customerID)
               .subscribe((res) => {
+                loaderDelete.dismiss();
                 this.navCtrl.push(HomePage);
               }, (err) => {
                 console.log('err', err)
