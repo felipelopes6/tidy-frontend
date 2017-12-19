@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>TIDY</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-right (click)="createNewCustomer()">
+        Create
+        <ion-icon name='add-circle' is-active="false"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tf-home">
+
+  <ion-list>
+    <ion-item *ngFor="let customer of customerList">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/tidy-logo.png">
+      </ion-thumbnail>
+      <h2>{{ customer.name }}</h2>
+      <p>{{ customer.email }}</p>
+      <button ion-button clear item-end (click)="customerDetail(customer)">
+        Details
+      </button>
+    </ion-item>
+  </ion-list>
+    
+</ion-content>

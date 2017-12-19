@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ customerDetail.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tf-customer-details">
+
+  <figure class="customer-details--avatar">
+    <img src="assets/imgs/tidy-logo.png" alt="">
+  </figure>
+
+  <section class="customer-details--options">
+    
+      <ion-grid>
+        <ion-row>
+
+          <ion-col col-6>
+            <button 
+              ion-button full outline icon-start
+              color="dark" 
+              class="options--button"
+              (click)="editCustomer(customerDetail.id)">
+              <ion-icon name='md-create' is-active="false"></ion-icon>
+              Edit
+            </button>
+          </ion-col>
+
+          <ion-col col-6>
+            <button 
+              ion-button full outline icon-start
+              color="danger"
+              class="options--button options--button-delete"
+              (click)="deleteCustomer(customerDetail.id)">
+              <ion-icon name='md-trash' is-active="false"></ion-icon>
+              Delete
+            </button>
+          </ion-col>
+          
+        </ion-row>
+      </ion-grid>    
+    
+  </section>
+
+  <section class="customer-details--infos">
+    <ion-card>              
+    
+      <ion-card-content>
+        <p class="infos-detail">
+          {{ customerDetail.email }}
+        </p>
+        <p class="infos-label">Email</p>
+      </ion-card-content>
+    
+    </ion-card>
+    
+    <ion-card>              
+    
+      <ion-card-content>
+        <p class="infos-detail">
+          {{ customerDetail.phone }}
+        </p>
+        <p class="infos-label">Phone</p>
+      </ion-card-content>
+    
+    </ion-card>
+
+    <ion-card>              
+        
+      <ion-card-content>
+        <div>
+          <p class="infos-detail">
+            {{ customerDetail.address }}
+          </p>
+          <p class="infos-label">Address</p>
+        </div>
+
+        <div>
+          <p class="infos-detail">
+            {{ customerDetail.city }}
+          </p>
+          <p class="infos-label">City</p>
+        </div>
+        
+        <div>
+          <p class="infos-detail">
+            {{ customerDetail.state }}
+          </p>
+          <p class="infos-label">State</p>
+        </div>
+        
+        <div>
+          <p class="infos-detail">
+            {{ customerDetail.zipcode }}
+          </p>
+          <p class="infos-label">Zip code</p>
+        </div>
+
+      </ion-card-content>
+    
+    </ion-card>
+  </section>
+    
+</ion-content>

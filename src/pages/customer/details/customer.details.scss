@@ -1,0 +1,35 @@
+.tf-customer-details {
+  
+  .customer-details--avatar {
+    text-align: center;
+    
+    img {
+      width: 120px;
+      height: 120px;      
+      border: 1px solid #ddd;
+      object-fit: cover;
+    }
+  }
+
+  .customer-details--options {
+    .options--button {
+      color: #7b7b7b;
+      border: none;      
+    }
+
+    .options--button-delete {
+      border-left: 1px solid #DDD;
+    }
+  }
+
+  .customer-details--infos {
+    .infos-detail {
+      font-size: 18px;
+    }
+
+    .infos-label {
+      font-size: 12px;
+      color: #a0a0a0;
+    }
+  }
+}

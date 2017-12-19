@@ -1,0 +1,100 @@
+<ion-header>
+  
+  <ion-navbar color="dark">
+    <ion-title>Edit customer</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content class="tf-edit-customer" padding>
+  
+  <form (ngSubmit)="editCustomer()" #editForm="ngForm">
+      
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Name</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="formData.name" 
+          name="name" required
+          placeholder="{{ customerDataModalEdit.name }}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark">Email</ion-label>
+        <ion-input 
+          type="email" 
+          [(ngModel)]="formData.email" 
+          name="email" required
+          placeholder="{{ customerDataModalEdit.email }}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark">Phone</ion-label>
+        <ion-input 
+          type="tel" 
+          [(ngModel)]="formData.phone" 
+          name="phone" required
+          placeholder="{{ customerDataModalEdit.phone }}">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="dark">Address</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="formData.address" 
+          name="address" required
+          placeholder="{{ customerDataModalEdit.address }}">
+      </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="dark">City</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="formData.city" 
+          name="city" required
+          placeholder="{{ customerDataModalEdit.city }}">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="dark">State</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="formData.state" 
+          name="state" required
+          placeholder="{{ customerDataModalEdit.state }}">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="dark">Zip Code</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="formData.zipcode" 
+          name="zipcode" required
+          placeholder="{{ customerDataModalEdit.zipcode }}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button 
+          ion-button full 
+          class="tidy-button"
+          type="submit" 
+          [disabled]="!editForm.form.valid">
+          Edit
+        </button>
+      </ion-item>
+    </ion-list>
+
+  </form>
+
+</ion-content>
