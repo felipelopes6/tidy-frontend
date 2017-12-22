@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, LoadingController } from 'ionic-angular';
 import { CustomerProvider } from '../../../providers/customer/customer';
 import { CustomerDetailsPage } from '../../customer/details/customer.details';
 import { ModalCreateCustomerPage } from '../../customer/create/modal.create.customer';
@@ -14,9 +14,14 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public customerProvider: CustomerProvider,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController) {
+      let loaderMain = this.loadingCtrl.create();
+      loaderMain.present();
+
       this.customerProvider.getCustomerData().subscribe((res) => {
         this.customerList = res;
+        loaderMain.dismiss();
       })
   }
 
