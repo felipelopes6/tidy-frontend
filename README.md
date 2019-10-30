@@ -48,3 +48,20 @@ $ ionic cordova build browser --prod
 ```
 
 ----------
+
+## Gallery
+
+### Home Screen
+<p>
+<img src="" width="150">
+</p>
+
+### Costumer Detail Screen
+<p>
+<img src="" width="150">
+</p>
+
+### Costumer Form Screen
+<p>
+<img src="" width="150">
+</p>
