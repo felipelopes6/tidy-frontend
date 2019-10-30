@@ -53,15 +53,15 @@ $ ionic cordova build browser --prod
 
 ### Home Screen
 <p>
-<img src="" width="150">
+<img src="./screenshots/home.png" width="150">
 </p>
 
 ### Costumer Detail Screen
 <p>
-<img src="" width="150">
+<img src="./screenshots/costumerDetail.png" width="150">
 </p>
 
 ### Costumer Form Screen
 <p>
-<img src="" width="150">
+<img src="./screenshots/newCostumer.png" width="150">
 </p>
